@@ -12,7 +12,7 @@ namespace WebApplication3.Migrations
             MigrationsDirectory = @"Migrations";
         }
 
-        protected override void Seed(WebApplication3.Data.ApplicationDbContext context)
+        protected override void Seed(Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -26,12 +26,18 @@ namespace WebApplication3.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            // context.Cities.AddOrUpdate(c => c.CityName,
-            // GetCities.ToArray()
-            //);
+            context.Provinces.AddOrUpdate(p => p.ProvinceName,
+                GetProvinces(context).ToArray()
+            );
+            context.SaveChanges();
+
+            context.Cities.AddOrUpdate(c => new { c.CityName},
+                GetCities(context).ToArray()
+            );
+            context.SaveChanges();
         }
 
-        private List<City> GetCities()
+        private List<City> GetCities(Data.ApplicationDbContext context)
         {
             List<City> cities = new List<City>()
             {
@@ -103,7 +109,7 @@ namespace WebApplication3.Migrations
             return cities;
         }
 
-        public List<Province> GetProvinces()
+        public List<Province> GetProvinces(Data.ApplicationDbContext context)
         {
             List<Province> provs = new List<Province>()
             {

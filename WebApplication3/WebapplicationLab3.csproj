@@ -202,9 +202,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709270509171_FirstCreate.cs" />
-    <Compile Include="Migrations\201709270509171_FirstCreate.Designer.cs">
-      <DependentUpon>201709270509171_FirstCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201709270705066_create_tables.cs" />
+    <Compile Include="Migrations\201709270705066_create_tables.Designer.cs">
+      <DependentUpon>201709270705066_create_tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -301,8 +301,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709270509171_FirstCreate.resx">
-      <DependentUpon>201709270509171_FirstCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709270705066_create_tables.resx">
+      <DependentUpon>201709270705066_create_tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
